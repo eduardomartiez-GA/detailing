@@ -1,8 +1,8 @@
 import { createHashRouter, redirect } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
-import { AppWrapper } from '@/components/Shared/AppWrapper'
-import { ProtectedRoute } from '@/components/Shared/ProtectedRoute'
-import { Layout } from '@/components/Shared/Layout'
+import { AppWrapper } from '@/components/shared/AppWrapper'
+import { ProtectedRoute } from '@/components/shared/ProtectedRoute'
+import { Layout } from '@/components/shared/Layout'
 
 // Lazy load pages for code splitting
 const HomePage = lazy(() => import('@/pages/Home').then(module => ({ default: module.HomePage })))
