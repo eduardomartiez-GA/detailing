@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
-import { AuthProvider } from '@/Context/Auth'
-import { ConfigProvider } from '@/Context/Configuration'
+import { AuthProvider } from '@/context/Auth'
+import { ConfigProvider } from '@/context/Configuration'
 
 export const AppWrapper = () => (
   <ConfigProvider>
