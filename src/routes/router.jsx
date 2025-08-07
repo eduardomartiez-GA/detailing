@@ -10,10 +10,6 @@ const LoginPage = lazy(() => import('@/pages/Login').then(module => ({ default: 
 const NotFound = lazy(() => import('@/pages/NotFound').then(module => ({ default: module.NotFound })))
 
 // Lazy load Catalogos pages
-const Servicios = lazy(() => import('@/pages/Secciones/Servicios').then(module => ({ default: module.Servicios })))
-const Auditorias = lazy(() => import('@/pages/Secciones/Auditorias').then(module => ({ default: module.Auditorias })))
-const DataAnalisis = lazy(() => import('@/pages/DataAnalisis').then(module => ({ default: module.DataAnalisis })))
-
 // Loading component for Suspense fallback
 // eslint-disable-next-line react-refresh/only-export-components
 const PageLoader = () => (
@@ -59,37 +55,6 @@ export const router = createHashRouter([
                     <NotFound />
                   </LazyWrapper>
                 ),
-              },
-              {
-                path: '/data-analisis',
-                element: (
-                  <LazyWrapper>
-                    <DataAnalisis />
-                  </LazyWrapper>
-                ),
-              },
-
-              // REPORTES
-              {
-                path: 'reportes',
-                children: [
-                  {
-                    path: 'evidencias',
-                    element: (
-                      <LazyWrapper>
-                        <Servicios />
-                      </LazyWrapper>
-                    ),
-                  },
-                  {
-                    path: 'rechazos',
-                    element: (
-                      <LazyWrapper>
-                        <Auditorias />
-                      </LazyWrapper>
-                    ),
-                  },
-                ],
               },
               // Si no existe la ruta - envia directamente a pagina no encontrada
               { path: '*', loader: () => redirect('/not-found') },
